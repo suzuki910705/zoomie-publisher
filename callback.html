@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TikTok OAuth Callback - Publisher</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="top">
+        <div class="brand">Publisher</div>
+        <h1>TikTok OAuth Callback</h1>
+        <p class="lead">Copy the authorization code below and return to your local token script.</p>
+      </header>
+
+      <section class="paper">
+        <h2>Authorization Code</h2>
+        <p id="status">Reading callback parameters...</p>
+        <pre id="code"></pre>
+
+        <h2>State</h2>
+        <pre id="state"></pre>
+
+        <h2>Error</h2>
+        <pre id="error"></pre>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code") || "";
+      const state = params.get("state") || "";
+      const error = params.get("error") || "";
+      const errorDescription = params.get("error_description") || "";
+
+      document.getElementById("status").textContent = code
+        ? "Authorization succeeded. Copy this code into the manual exchange command."
+        : "No authorization code was found in this callback URL.";
+      document.getElementById("code").textContent = code;
+      document.getElementById("state").textContent = state;
+      document.getElementById("error").textContent = [error, errorDescription].filter(Boolean).join("\n");
+    </script>
+  </body>
+</html>
