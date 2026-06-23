@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Publisher</title>
+    <meta name="application-name" content="Zoomie Publisher" />
+    <meta name="description" content="Zoomie Publisher is a web app for preparing, scheduling, and publishing short-form videos to authorized social accounts." />
+    <title>Zoomie Publisher</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="app-icon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page">
       <header class="hero">
         <nav class="site-nav" aria-label="Site navigation">
-          <a class="brand" href="index.html">Publisher</a>
+          <a class="brand" href="index.html">Zoomie Publisher</a>
           <div>
             <a href="#features">Features</a>
             <a href="#tiktok">TikTok Integration</a>
@@ -23,14 +27,14 @@
           <section>
             <p class="eyebrow">Video publishing workflow</p>
             <h1>Plan, schedule, and publish short-form videos from one focused tool.</h1>
-            <p class="lead">Publisher helps authorized content operators upload a video, prepare post text, choose destinations, and schedule publishing to connected social accounts.</p>
+            <p class="lead">Zoomie Publisher helps authorized content operators upload a video, prepare post text, choose destinations, and schedule publishing to connected social accounts.</p>
             <div class="hero-actions">
               <a href="#workflow">How it works</a>
               <a href="#tiktok">TikTok API usage</a>
             </div>
           </section>
 
-          <aside class="product-preview" aria-label="Publisher interface preview">
+          <aside class="product-preview" aria-label="Zoomie Publisher interface preview">
             <div class="preview-top">
               <span></span>
               <span></span>
@@ -62,7 +66,7 @@
 
       <section id="features" class="section">
         <h2>What this app does</h2>
-        <p>Publisher is a web app for managing a repeatable short-form video publishing workflow. It is designed for authorized operators who manage their own connected creator accounts.</p>
+        <p>Zoomie Publisher is a web app for managing a repeatable short-form video publishing workflow. It is designed for authorized operators who manage their own connected creator accounts.</p>
         <div class="feature-grid">
           <article>
             <h3>Upload and prepare</h3>
@@ -70,15 +74,15 @@
           </article>
           <article>
             <h3>Schedule posts</h3>
-            <p>Choose an exact publish time or use built-in morning and evening scheduling shortcuts. Scheduled tasks are processed by the Publisher server.</p>
+            <p>Choose an exact publish time or use built-in morning and evening scheduling shortcuts. Scheduled tasks are processed by the Zoomie Publisher server.</p>
           </article>
           <article>
             <h3>Platform mapping</h3>
-            <p>Publisher maps the same post data to each platform's required fields, such as YouTube title/tags and TikTok post text.</p>
+            <p>Zoomie Publisher maps the same post data to each platform's required fields, such as YouTube title/tags and TikTok post text.</p>
           </article>
           <article>
             <h3>Account checks</h3>
-            <p>Before posting to TikTok, Publisher verifies the authorized creator username to reduce the risk of publishing to the wrong account.</p>
+            <p>Before posting to TikTok, Zoomie Publisher verifies the authorized creator username to reduce the risk of publishing to the wrong account.</p>
           </article>
         </div>
       </section>
@@ -86,12 +90,12 @@
       <section id="tiktok" class="section split">
         <div>
           <h2>TikTok integration</h2>
-          <p>Publisher uses TikTok for Developers capabilities only after the TikTok account owner authorizes the app. TikTok data is used for account verification and selected video publishing.</p>
+          <p>Zoomie Publisher uses TikTok for Developers capabilities only after the TikTok account owner authorizes the app. TikTok data is used for account verification and selected video publishing.</p>
         </div>
         <div class="paper">
           <h3>Products and scopes used</h3>
           <ul>
-            <li><strong>Login Kit</strong>: lets the TikTok account owner authorize Publisher through OAuth.</li>
+            <li><strong>Login Kit</strong>: lets the TikTok account owner authorize Zoomie Publisher through OAuth.</li>
             <li><strong>user.info.basic</strong>: queries creator information and privacy options, including the creator username used for account verification.</li>
             <li><strong>video.publish</strong>: publishes videos selected or scheduled by the authorized operator through the Content Posting API.</li>
           </ul>
@@ -103,15 +107,15 @@
         <ol class="steps">
           <li><span>1</span><p>The operator connects an authorized creator account through the platform OAuth flow.</p></li>
           <li><span>2</span><p>The operator uploads a video and enters title, description, hashtags, and schedule time.</p></li>
-          <li><span>3</span><p>Publisher verifies the configured destination account before sending content to platform APIs.</p></li>
-          <li><span>4</span><p>At the scheduled time, Publisher uploads the selected video and post metadata to the chosen destinations.</p></li>
+          <li><span>3</span><p>Zoomie Publisher verifies the configured destination account before sending content to platform APIs.</p></li>
+          <li><span>4</span><p>At the scheduled time, Zoomie Publisher uploads the selected video and post metadata to the chosen destinations.</p></li>
         </ol>
       </section>
 
       <section class="section split">
         <div class="paper">
           <h2>Data and control</h2>
-          <p>Publisher does not ask for TikTok passwords. OAuth tokens are used only for authorized publishing workflows. Operators can revoke TikTok app access from their TikTok account settings.</p>
+          <p>Zoomie Publisher does not ask for TikTok passwords. OAuth tokens are used only for authorized publishing workflows. Operators can revoke TikTok app access from their TikTok account settings.</p>
         </div>
         <div class="paper">
           <h2>Support</h2>
@@ -139,7 +143,7 @@
       </section>
 
       <footer>
-        <p>Publisher is operated as a content publishing tool for authorized creator accounts.</p>
+        <p>Zoomie Publisher is operated as a content publishing tool for authorized creator accounts.</p>
         <p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="callback.html">OAuth Callback</a></p>
       </footer>
     </main>
