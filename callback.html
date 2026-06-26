@@ -25,11 +25,24 @@
     </main>
 
     <script>
-      const target = new URL("https://comfyui-schedule.joyso.io/api/oauth/tiktok/callback");
-      target.search = window.location.search;
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code") || "";
+      const error = params.get("error") || "";
+      const errorDescription = params.get("error_description") || "";
 
-      document.getElementById("fallback").href = target.toString();
-      window.location.replace(target.toString());
+      if (!code) {
+        const message = error
+          ? ["TikTok authorization failed.", error, errorDescription].filter(Boolean).join(" ")
+          : "No authorization code was found in this callback URL.";
+        document.getElementById("status").textContent = message;
+        document.getElementById("fallback").removeAttribute("href");
+      } else {
+        const target = new URL("https://comfyui-schedule.joyso.io/api/oauth/tiktok/callback");
+        target.search = window.location.search;
+
+        document.getElementById("fallback").href = target.toString();
+        window.location.replace(target.toString());
+      }
     </script>
   </body>
 </html>
