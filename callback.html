@@ -14,35 +14,22 @@
       <header class="top">
         <div class="brand">Zoomie Publisher</div>
         <h1>TikTok OAuth Callback</h1>
-        <p class="lead">Copy the authorization code below and return to your local token script.</p>
+        <p class="lead">Completing TikTok authorization...</p>
       </header>
 
       <section class="paper">
-        <h2>Authorization Code</h2>
-        <p id="status">Reading callback parameters...</p>
-        <pre id="code"></pre>
-
-        <h2>State</h2>
-        <pre id="state"></pre>
-
-        <h2>Error</h2>
-        <pre id="error"></pre>
+        <h2>Status</h2>
+        <p id="status">Redirecting to Zoomie Publisher...</p>
+        <p><a id="fallback" href="#">Continue to Zoomie Publisher</a></p>
       </section>
     </main>
 
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const code = params.get("code") || "";
-      const state = params.get("state") || "";
-      const error = params.get("error") || "";
-      const errorDescription = params.get("error_description") || "";
+      const target = new URL("https://comfyui-schedule.joyso.io/api/oauth/tiktok/callback");
+      target.search = window.location.search;
 
-      document.getElementById("status").textContent = code
-        ? "Authorization succeeded. Copy this code into the manual exchange command."
-        : "No authorization code was found in this callback URL.";
-      document.getElementById("code").textContent = code;
-      document.getElementById("state").textContent = state;
-      document.getElementById("error").textContent = [error, errorDescription].filter(Boolean).join("\n");
+      document.getElementById("fallback").href = target.toString();
+      window.location.replace(target.toString());
     </script>
   </body>
 </html>
